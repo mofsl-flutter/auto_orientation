@@ -17,7 +17,7 @@ public class AutoOrientationPlugin: NSObject, FlutterPlugin {
 
         UIViewController.attemptRotationToDeviceOrientation()
 
-        result(FlutterMethodNotImplemented)
+        result(nil)
     }
     
     @available(iOS 16.0, *)
@@ -39,7 +39,6 @@ public class AutoOrientationPlugin: NSObject, FlutterPlugin {
             break
         }
         windowScene.requestGeometryUpdate(.iOS(interfaceOrientations: resolvedMask)) { error in
-            // TODO: Perhaps call back to Flutter with an error
         }
     }
     
